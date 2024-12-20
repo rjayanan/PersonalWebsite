@@ -1,9 +1,23 @@
-import React from 'react';
-import '../styles/Navbar.css';
+import React, { useState, useEffect } from 'react';
+import '../styles/App.css';
 
 function Navbar() {
+  const [scrolling, setScrolling] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolling(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleDarkMode = () => {
+    document.body.classList.toggle('dark-mode');
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolling ? 'scrolled' : ''}`}>
       <div className="logo">Rishigesh Jayananth</div>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -16,8 +30,13 @@ function Navbar() {
   rel="noopener noreferrer"
 >
   Resume
-</a></li>
-        
+</a>
+</li>
+        <li>
+          <button className="btn" onClick={toggleDarkMode}>
+            {darkMode ? 'Light Mode' : 'Dark Mode'}
+          </button>
+        </li>
       </ul>
     </nav>
   );

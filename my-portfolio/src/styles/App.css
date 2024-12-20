@@ -1,6 +1,113 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f4f9;
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9; /* Light Mode Background */
+  color: #333333; /* Default Text Color */
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  color: #0078ff; /* Link Color */
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #005bb5;
+  text-shadow: 0 0 8px rgba(0, 120, 255, 0.6);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #1e1e2e; /* Dark Mode Background */
+  color: #f4f4f4; /* Light Text */
+}
+
+body.dark-mode a {
+  color: #00bfff; /* Bright Link Color */
+}
+
+body.dark-mode a:hover {
+  color: #00a3cc;
+  text-shadow: 0 0 8px rgba(0, 191, 255, 0.8);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #005bb5;
+}
+
+body.dark-mode .btn {
+  background-color: #00bfff;
+  color: #1e1e2e;
+}
+
+body.dark-mode .btn:hover {
+  background-color: #00a3cc;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  color: #333333;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .navbar {
+  background-color: rgba(30, 30, 46, 0.9);
+  color: #f4f4f4;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+.navbar ul li a {
+  color: inherit;
+  font-weight: 500;
+}
+
+.navbar ul li a:hover {
+  color: #0078ff;
+}
+
+body.dark-mode .navbar ul li a:hover {
+  color: #00bfff;
+}
