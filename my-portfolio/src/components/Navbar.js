@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/App.css';
+import '../styles/Navbar.css';
 
 function Navbar() {
   const [scrolling, setScrolling] = useState(false);
@@ -23,19 +23,13 @@ function Navbar() {
         <li><a href="#home">Home</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a 
-  href="/resume.pdf" 
-  download="Rishigesh_Jayananth_Resume.pdf" 
-  target="_blank" 
-  rel="noopener noreferrer"
->
-  Resume
-</a>
-</li>
+        <li><a href="/resume.pdf" download="Rishigesh_Jayananth_Resume.pdf">Resume</a></li>
         <li>
-          <button className="btn" onClick={toggleDarkMode}>
-            {darkMode ? 'Light Mode' : 'Dark Mode'}
-          </button>
+          {/* Toggle Switch */}
+          <label className="dark-mode-switch">
+            <input type="checkbox" onChange={toggleDarkMode} checked={darkMode} />
+            <span className="slider"></span>
+          </label>
         </li>
       </ul>
     </nav>

@@ -1,0 +1,46 @@
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full-screen height */
+    text-align: center;
+    background: linear-gradient(135deg, #0078FF, #00CFFD); /* Blue Gradient */
+    color: white; /* White text for contrast */
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .hero-title span {
+    color: #00FF99; /* Gold accent for your name */
+  }
+  
+  .hero-tagline {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    line-height: 1.5;
+  }
+  
+  .btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    background-color: white; /* White button for contrast */
+    color: #0078FF; /* Blue text for the button */
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn:hover {
+    background-color: #00CFFD; /* Hover effect matches the gradient */
+    color: white; /* White text on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+  }
+  
